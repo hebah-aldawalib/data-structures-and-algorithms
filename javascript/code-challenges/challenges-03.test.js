@@ -7,12 +7,12 @@ Write a function called addTwo that takes in an array and adds two to every valu
 
 const addTwo = (arr) => {
   // Solution code here...
-  let newArr=[];
+  let array=[];
   for (let i = 0; i < arr.length; i++) {
-     newArr.push(arr[i]+2);
+    array.push(arr[i]+2);
     
   }
-  return newArr;
+  return array;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -23,10 +23,10 @@ For example, typeNum([1, 'bob' ,3]) returns [1,3].
 
 const typeNum = (arr) => {
   // Solution code here...
-  let newArr=arr.filter(num=>{
-    return( typeof num === 'number' )
+  let array=arr.filter(value => {
+    return( typeof value === 'number' )
   })
-  return newArr ;
+  return array ;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -37,10 +37,10 @@ For example, containsAnd(['panda', 'ran', 'and']) returns ['panda', 'and'].
 
 const containsAnd = (arr) => {
   // Solution code here...
-  let newArr=arr.filter(str=>{
-    return( str.includes('and'))
+  let array=arr.filter(string=>{
+    return( string.includes('and'))
   })
-  return newArr ;
+  return array;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -51,10 +51,10 @@ For example, oddValues([1,2,3]) returns [1,3].
 
 const oddValues = (arr) => {
   // Solution code here...
-  let newArr=arr.filter(odd=>{
-    return(odd%2==!0)
+  let array=arr.filter(odd=>{
+    return(odd%2 !==0)
   })
-  return newArr ;
+  return array ;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -65,16 +65,14 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 
 const notInFirstArray = (forbiddenValues, arr) => {
   // Solution code here...
-  let newArr=[];
   
-  for (let i = 0; i < arr.length; i++) {
-    newArr=arr.filter(n=>{
-     return (!forbiddenValues.includes(n))
-   })
-    
-  }
-  return newArr;
+
+  forbiddenValues = forbiddenValues.filter((i)=> {
+    return !arr.includes(i); 
+  });
+  return arr;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal
